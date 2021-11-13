@@ -39,10 +39,10 @@ label {
     border: 1px solid #6f212f;
 }
 h1 {
-    color: #022;
+    color: #0a0f9e;
     margin: 10px 0 20px 0;
     padding: 0;
-    font-size: 24px;
+    font-size: 30px;
     text-align:center;
 }
 input#item {
