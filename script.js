@@ -60,19 +60,19 @@ function share()
    passlist();
 }
 
-//Copy URL Week 14
 function copyToClipboard(text) {
-  var passbyurl = document.createElement("textarea");
-  passbyurl.value = text;
-  document.body.appendChild(passbyurl);
-  passbyurl.focus();
-  passbyurl.select();
-  document.execCommand("copy");
-  document.body.removeChild(passbyurl);
-  alert("URL has been copied. Ready to share: " + text);
-  //window.prompt("Copy & Share List!", text);
-    
+ var passbyurl = document.createElement("textarea");
+ passbyurl.value = text;
+ document.body.appendChild(passbyurl);
+ passbyurl.focus();
+ passbyurl.select();
+ document.execCommand("copy");
+ document.body.removeChild(passbyurl);
+ alert("URL has been copied. Ready to share: " + text);
+ //window.prompt("Copy & Share List!", text);
+  
 }
+
 
 window.onload = function() {
  alert("Welcome to 'Shopping List' App!\n\nCreated by\nMatthew Olson\n\nQuestions?\nemail Matthew Olson\ns0453555@student.rockvalleycollege.edu\n\nRegister @ RockValleyCollege.edu");
