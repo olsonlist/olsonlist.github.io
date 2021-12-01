@@ -29,21 +29,23 @@ function get(name){
 //v4.1 ShareList via bitly api
 function passlist()
 {
-var url = "https://olsonlist.github.io/index.html?list="+ shoppinglist;   //replace YOURGITHUBURL with your Github repo URL example: Konkollist.github.io
-   var accessToken = "b93571884d1b12994cd66fd7b13a5a1216cb7e2f"; //replace with your NEW Bit.ly TOKEN
-   var params = {
-       "long_url" : url          
-   };
-   $.ajax({
-       url: "https://api-ssl.bitly.com/v4/shorten",
-       cache: false,
-       dataType: "json",
-       method: "POST",
-       contentType: "application/json",
-       beforeSend: function (xhr) {
-           xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
-       },
-       data: JSON.stringify(params)
+ var url = "https://rvclist.github.io/rvclist15/index.html?list="+ shoppinglist;
+    var accessToken = "b93571884d1b12994cd66fd7b13a5a1216cb7e2f";
+
+    var params = {
+        "long_url" : url           
+    };
+
+    $.ajax({
+        url: "https://api-ssl.bitly.com/v4/shorten",
+        cache: false,
+        dataType: "json",
+        method: "POST",
+        contentType: "application/json",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+        },
+        data: JSON.stringify(params)
 	}).done(function(data) {
 		getshorturl = 1;
 		document.getElementById("sharelist").innerHTML = "The URL to share the list:\n" + data.link;
@@ -53,24 +55,23 @@ var url = "https://olsonlist.github.io/index.html?list="+ shoppinglist;   //repl
 		copyToClipboard(URL);
 	});
 }
-
 //vFinal share function
 function share()
 {
    passlist();
 }
-
+//Copy URL 
 function copyToClipboard(text) {
- var passbyurl = document.createElement("textarea");
- passbyurl.value = text;
- document.body.appendChild(passbyurl);
- passbyurl.focus();
- passbyurl.select();
- document.execCommand("copy");
- document.body.removeChild(passbyurl);
- alert("URL has been copied. Ready to share: " + text);
- //window.prompt("Copy & Share List!", text);
-  
+  var passbyurl = document.createElement("textarea");
+  passbyurl.value = text;
+  document.body.appendChild(passbyurl);
+  passbyurl.focus();
+  passbyurl.select();
+  document.execCommand("copy");
+  document.body.removeChild(passbyurl);
+  alert("URL has been copied. Ready to share: " + text);
+  //window.prompt("Copy & Share List!", text);
+    
 }
 
 
