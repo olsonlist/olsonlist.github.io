@@ -26,15 +26,34 @@ function get(name){
     if(num<0)  return url;
 }
 
-//ShareList passbyvalues Week 14
+//v4.1 ShareList via bitly api
 function passlist()
 {
- var url = "https://olsonlist.github.io/index.html"+ shoppinglist;
- //Week 14 add link to sharelist id
-      document.getElementById("sharelist").innerHTML = 'Share List:\n' + url;
- //Copy URL
-      copyToClipboard(url);
+var url = "https://olsonlist.github.io/index.html?list="+ shoppinglist;   //replace YOURGITHUBURL with your Github repo URL example: Konkollist.github.io
+   var accessToken = "b93571884d1b12994cd66fd7b13a5a1216cb7e2f"; //replace with your NEW Bit.ly TOKEN
+   var params = {
+       "long_url" : url          
+   };
+   $.ajax({
+       url: "https://api-ssl.bitly.com/v4/shorten",
+       cache: false,
+       dataType: "json",
+       method: "POST",
+       contentType: "application/json",
+       beforeSend: function (xhr) {
+           xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+       },
+       data: JSON.stringify(params)
+	}).done(function(data) {
+		getshorturl = 1;
+		document.getElementById("sharelist").innerHTML = "The URL to share the list:\n" + data.link;
+		copyToClipboard(data.link);
+	}).fail(function(data) {
+		document.getElementById("sharelist").innerHTML = "The URL to share the list:\n" + url;
+		copyToClipboard(URL);
+	});
 }
+
 //vFinal share function
 function share()
 {
