@@ -1,8 +1,8 @@
 // Matthew Olson
 // Fall 2021
 // Web233 Javascript
-// Date: 11/14/2021
-//Assignment #14
+// Date: 12/5/2021
+//Assignment #15
 
 window.onload = function() {
     alert("Welcome to 'Shopping List' App!\n\nCreated by Rock Valley College\n**Javascript(Web233) Students**\n\nQuestions?\nemail Professor Chuck Konkol\nc.konkol@rockvalleycollege.edu\n\nRegister @ RockValleyCollege.edu");
