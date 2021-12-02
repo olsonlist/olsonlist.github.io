@@ -335,7 +335,7 @@ TheList += TheRow;
 }
 if (arrayLength > 0)
 {
-  document.getElementById("labels").innerHTML = 'Purchased';
+  document.getElementById("labels").innerHTML = 'Seen';
   document.getElementById("MyCart").innerHTML = '<ul>' + TheList + '</ul>';
 }else{
   document.getElementById("labels").innerHTML = '';
