@@ -45,7 +45,7 @@ h1 {
     text-align:center;
 }
 input#item {
-    position:center;
+    text-align:center;
     margin-bottom:5px;
 }
 input#remove {
