@@ -26,7 +26,9 @@ body {
     margin:2px; background:#525252; color:#525252;text-align:center;font-size:x-small;
     }
 label {
-     
+     float:left;
+    padding-right: 15px;
+    text-indent: 5px;
 }
 #wrapper {
     width:300px;
@@ -45,7 +47,7 @@ h1 {
     text-align:center;
 }
 input#item {
-    text-align:center;
+    float:left;
     margin-bottom:5px;
 }
 input#remove {
@@ -71,11 +73,11 @@ input[type=checkbox] {
 }
 input[type=button] {
     vertical-align:middle;
-    position: center;
+    float:right;
     margin-bottom:10px;
     margin-right:1,5;
     margin-left:10px;
-    background-color: #525252;
+    background-color: #0a0f9e;
     color: #FFFFFF;
     width: 60px;
 }
